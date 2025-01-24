@@ -16,20 +16,23 @@ build:
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - pip
     - setuptools
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - black >=23.3.0
     - coverage >=5.2.1
     - dash >=2.0.0
-    - hypothesis >=6.93.2
+    - hypothesis >=6.121.0
     - libcst >=1.0.0
     - pandas >=1.0.0
     - psutil >=3.0.0
     - pytest >=6.0.1
-    - requests >=2.24.0
+
+    # From hypothesis[cli]
+    - click >=7.0
+    - rich >=9.0.0
 
     # Pip check reports dash 2.15 requires the following
     - dash-core-components
@@ -41,8 +44,10 @@ test:
     - hypofuzz
   commands:
     - pip check
+    - hypothesis fuzz --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://hypofuzz.com/
