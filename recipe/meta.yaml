@@ -1,13 +1,13 @@
 {% set name = "hypofuzz" %}
-{% set version = "24.9.1" %}
+{% set version = "24.11.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/hypofuzz-{{ version }}.tar.gz
-  sha256: cc767b60fc02da882b79ef5bbda34e66ff41673b7e6794dd1f235bfa015027fb
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/hypofuzz-{{ version }}.tar.gz
+  sha256: ad21b1fd8c07e20bd5315cdb029be361fc5fb2e432b33b90a4de9f1660e900ef
 
 build:
   noarch: python
@@ -16,20 +16,23 @@ build:
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - pip
     - setuptools
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - black >=23.3.0
     - coverage >=5.2.1
     - dash >=2.0.0
-    - hypothesis >=6.93.2
+    - hypothesis >=6.121.0
     - libcst >=1.0.0
     - pandas >=1.0.0
     - psutil >=3.0.0
     - pytest >=6.0.1
-    - requests >=2.24.0
+
+    # From hypothesis[cli]
+    - click >=7.0
+    - rich >=9.0.0
 
     # Pip check reports dash 2.15 requires the following
     - dash-core-components
@@ -41,8 +44,10 @@ test:
     - hypofuzz
   commands:
     - pip check
+    - hypothesis fuzz --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://hypofuzz.com/
