@@ -1,5 +1,5 @@
 {% set name = "hypofuzz" %}
-{% set version = "25.1.4" %}
+{% set version = "25.1.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/hypofuzz-{{ version }}.tar.gz
-  sha256: f0579fa027324a5eb89c708815179d60fe1e0cb29b97b74b329a41e03950ac8f
+  sha256: b3d93208e7b3be0f86cf6fc087a41ab33f611a77e58d742d2dcf1569addd0bb9
 
 build:
   noarch: python
@@ -24,7 +24,7 @@ requirements:
     - black >=23.3.0
     - coverage >=5.2.1
     - dash >=2.0.0
-    - hypothesis >=6.123.12
+    - hypothesis >=6.124.0
     - libcst >=1.0.0
     - pandas >=1.0.0
     - psutil >=3.0.0
