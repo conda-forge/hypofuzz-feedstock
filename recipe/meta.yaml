@@ -1,5 +1,5 @@
 {% set name = "hypofuzz" %}
-{% set version = "25.2.2" %}
+{% set version = "25.2.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/hypofuzz-{{ version }}.tar.gz
-  sha256: b550e87170107b1d89cdea6d6e33882b1c805307559dd664dfb503b4c2860f3d
+  sha256: 0976045c122b4bfbecd508924689dc82059acd8ce7a29902d3bdc468dec593d1
 
 build:
   noarch: python
@@ -19,25 +19,23 @@ requirements:
     - python {{ python_min }}
     - pip
     - setuptools
+    - wheel
+    - nodejs
   run:
     - python >={{ python_min }}
     - black >=23.3.0
     - coverage >=5.2.1
-    - dash >=2.0.0
-    - hypothesis >=6.124.9
+    - hypothesis >=6.125.3
     - libcst >=1.0.0
-    - pandas >=1.0.0
     - psutil >=3.0.0
     - pytest >=6.0.1
+    - starlette
+    - trio
+    - hypercorn
 
     # From hypothesis[cli]
     - click >=7.0
     - rich >=9.0.0
-
-    # Pip check reports dash 2.15 requires the following
-    - dash-core-components
-    - dash-html-components
-    - dash-table
 
 test:
   imports:
