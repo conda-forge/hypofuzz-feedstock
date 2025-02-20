@@ -19,6 +19,7 @@ requirements:
     - python {{ python_min }}
     - pip
     - setuptools
+    - nodejs
   run:
     - python >={{ python_min }}
     - black >=23.3.0
