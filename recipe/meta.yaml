@@ -1,5 +1,5 @@
 {% set name = "hypofuzz" %}
-{% set version = "25.2.4" %}
+{% set version = "25.2.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/hypofuzz-{{ version }}.tar.gz
-  sha256: 0976045c122b4bfbecd508924689dc82059acd8ce7a29902d3bdc468dec593d1
+  sha256: 800934e630ee3371b2974b0c3736eee2bb66c854fff52c4a2fd13fd0979787e0
 
 build:
   noarch: python
