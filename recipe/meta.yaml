@@ -25,17 +25,18 @@ requirements:
     - python >={{ python_min }}
     - black >=23.3.0
     - coverage >=5.2.1
-    - hypothesis >=6.127.2
+    - hypothesis >=6.130.7
     - libcst >=1.0.0
     - psutil >=3.0.0
     - pytest >=6.0.1
     - starlette
     - trio
     - hypercorn
-
     # From hypothesis[cli]
     - click >=7.0
     - rich >=9.0.0
+    # From hypothesis[watchdog]
+    - watchdog >=4.0.0
 
 test:
   imports:
