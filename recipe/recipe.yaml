@@ -23,7 +23,10 @@ requirements:
     - pip
     - setuptools
     - wheel
-    - nodejs
+    - sphinx
+    - furo
+    - myst-parser
+    - sphinxcontrib-bibtex
   run:
     - python >=${{ python_min }}
     - black >=23.3.0
