@@ -27,6 +27,8 @@ requirements:
     - furo
     - myst-parser
     - sphinxcontrib-bibtex
+    # nodejs required to build but not listed
+    - nodejs
   run:
     - python >=${{ python_min }}
     - black >=23.3.0
