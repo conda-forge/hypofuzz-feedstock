@@ -33,7 +33,7 @@ requirements:
     - python >=${{ python_min }}
     - black >=23.3.0
     - coverage >=5.2.1
-    - hypothesis >=6.130.7
+    - hypothesis >=6.135.3
     - libcst >=1.0.0
     - psutil >=3.0.0
     - pytest >=6.0.1
