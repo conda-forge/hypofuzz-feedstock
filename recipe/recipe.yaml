@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: hypofuzz
-  version: "25.6.2"
+  version: "25.6.3"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/hypofuzz-${{ version }}.tar.gz
-  sha256: 55b74e570e790a7d3b8b1da1c3fb26c926dbaa5659fd84841781b172c4a9a8c4
+  sha256: be159b9702481df39aa3469bbd044267791b491ac7bf7a1ef7ee50f3a33ce260
 
 build:
   number: 0
@@ -33,10 +33,10 @@ requirements:
     - python >=${{ python_min }}
     - black >=23.3.0
     - coverage >=5.2.1
-    - hypothesis >=6.135.3
+    - hypothesis >=6.135.12
     - libcst >=1.0.0
     - psutil >=3.0.0
-    - pytest >=6.0.1
+    - pytest >=7.0.0
     - starlette
     - trio
     - hypercorn
