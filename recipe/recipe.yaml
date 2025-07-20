@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: hypofuzz
-  version: "25.7.1"
+  version: "25.7.2"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/hypofuzz-${{ version }}.tar.gz
-  sha256: 6f6f2cf95f0f828b3f326e27b466b8b166ab7c4dd999c4fc3aafa765d293cb26
+  sha256: 8c868e42dcef5cc26d88dccfc2d4c2447de59a6105b8b598e2902630a393a7ab
 
 build:
   number: 0
